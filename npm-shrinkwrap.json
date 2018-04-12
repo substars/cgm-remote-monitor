@@ -6674,11 +6674,6 @@
           "resolved": "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz",
           "integrity": "sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y="
         },
-        "node-uuid": {
-          "version": "1.4.8",
-          "resolved": "https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.8.tgz",
-          "integrity": "sha1-sEDrCSOWivq/jTL7HxfxFn/auQc="
-        },
         "qs": {
           "version": "5.1.0",
           "resolved": "https://registry.npmjs.org/qs/-/qs-5.1.0.tgz",
@@ -7080,6 +7075,11 @@
         "util": "0.10.3",
         "vm-browserify": "0.0.4"
       }
+    },
+    "node-uuid": {
+      "version": "1.4.8",
+      "resolved": "https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.8.tgz",
+      "integrity": "sha1-sEDrCSOWivq/jTL7HxfxFn/auQc="
     },
     "nomnom": {
       "version": "1.8.1",
@@ -9315,11 +9315,6 @@
           "requires": {
             "mime-db": "1.12.0"
           }
-        },
-        "node-uuid": {
-          "version": "1.4.8",
-          "resolved": "https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.8.tgz",
-          "integrity": "sha1-sEDrCSOWivq/jTL7HxfxFn/auQc="
         },
         "oauth-sign": {
           "version": "0.6.0",

@@ -5,12 +5,13 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -45,13 +46,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Don't boot with headless mode
-  #   vb.gui = true
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  # end
+
+  config.vm.provider "virtualbox" do |vb|
+
+    vb.memory = 4096
+    vb.cpus = 2
+  end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
@@ -71,6 +71,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.provision "cfengine" do |cf|
   #   cf.policy_server_address = "10.0.2.15"
   # end
+
+  config.vm.provision "shell", path: "setup.sh"
+  config.vm.provision "shell", inline: "cd /vagrant && npm install --max_old_space_size=2048", privileged: false
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
